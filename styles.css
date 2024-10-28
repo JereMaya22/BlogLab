@@ -1,0 +1,194 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #000000;
+    background-color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #2a2a2a;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #32CD32; /* Verde radiactivo */
+    animation: titleGlow 1.5s infinite alternate; /* Animación de brillo en el título */
+}
+
+/* Animación de brillo para el título */
+@keyframes titleGlow {
+    0% { color: #32CD32; }
+    100% { color: lime; }
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #222222;
+    opacity: 0;
+    animation: fadeIn 2s forwards; /* Animación de desvanecimiento para el contenido principal */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.content {
+    max-width: 600px;
+    margin-right: 2rem;
+    animation: slideIn 1.5s ease-out forwards; /* Animación de deslizamiento para el contenido de texto */
+    transform: translateX(-20px);
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    color: #32CD32;
+    animation: textGlow 1.5s infinite alternate; /* Brillo para el subtítulo */
+}
+
+.content h3 {
+
+    color: #ADD8E6;
+}
+
+.content ul{
+    color: #cccccc;
+}
+
+/* Animación de brillo para el subtítulo */
+@keyframes textGlow {
+    0% { color: #32CD32; }
+    100% { color: lime; }
+}
+
+.content p {
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.image {
+    max-width: 500px;
+    animation: zoomIn 1.5s ease-in-out forwards; /* Animación de zoom para la imagen */
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2a2a2a;
+    color: #888888;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .content {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .image {
+        max-width: 100%;
+        margin-top: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .content h2 {
+        font-size: 1.25rem;
+    }
+
+    /* Estilos para las tarjetas */
+    .row {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centra las tarjetas */
+    }
+
+    .card {
+        width: 90%; /* Hacer que las tarjetas ocupen el 90% del ancho del contenedor */
+        margin-bottom: 1rem; /* Espacio entre las tarjetas */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    .content h2 {
+        font-size: 1rem;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+.card{
+    animation: zoomIn 1.5s ease-in-out forwards; 
+}
+
+.card-text {
+    text-align: justify;
+    color: #cccccc;
+}
+
+.card-title {
+    color: #32CD32; /* Color verde radiactivo para el título */
+}
+
+.container-fluid {
+    background-color: #000000; /* Fondo negro para el contenedor de las tarjetas */
+    padding: 4rem;
+}
+
+.row {
+    display: flex;
+    justify-content: center; /* Centra los elementos en la fila */
+    gap: 1rem; /* Espacio entre las tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan si no hay suficiente espacio */
+}
+
+.card-body {
+    background-color: #333333;
+}
